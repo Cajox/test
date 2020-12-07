@@ -1,0 +1,17 @@
+{
+  "name":"citruscatalog",
+  "description":"Citrus catalog",
+  "license":"MIT",
+  "type":"project",
+  "require": {
+    "bramus/router": "~1.5",
+    "lichtner/fluentpdo": "dev-master",
+    "particle/validator": "^2.2",
+    "eftec/bladeone": "^3.47"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\":"app/"
+    }
+  }
+}
