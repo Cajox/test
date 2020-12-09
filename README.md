@@ -6,6 +6,7 @@ Installation instruction:
   - composer install
   - create config/db.php and change DB settings
   - set up domain document root to /public folder
+  - import citruscatalog.sql
   
   DATABASE Contains:
   users{ id, firstname, lastname, email, password, role, active, created_at, updated_at }
