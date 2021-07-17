@@ -6,7 +6,7 @@ class Comment extends Model{
 
     public function getAllComments()
     {
-        return $this->db->from('comments')
+        return self::$db->from('comments')
             ->innerJoin('items ON comments.item_id = items.id')
             ->innerJoin('users ON comments.user_id = users.id')
             ->select('product_title,firstname')->fetchAll();
@@ -14,7 +14,7 @@ class Comment extends Model{
 
     public function getAllActiveComments()
     {
-        return $this->db->from('comments')
+        return self::$db->from('comments')
             ->where('active', 1)
             ->innerJoin('items ON comments.item_id = items.id')
             ->innerJoin('companies ON items.company_id = companies.id')
@@ -33,13 +33,13 @@ class Comment extends Model{
 
         ];
 
-        $this->db->insertInto('comments', $values)->execute();
+        self::$db->insertInto('comments', $values)->execute();
         return true;
     }
 
     public function updateCommentActive($id, $active)
     {
-        $this->db->update('comments')
+        self::$db->update('comments')
             ->set('active', $active)
             ->where('id', $id)
             ->execute();
